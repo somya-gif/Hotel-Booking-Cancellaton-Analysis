@@ -1,0 +1,8 @@
+# Power BI & Temp files
+*.tmp
+*.abf
+~$*
+
+# OS Artifacts
+Thumbs.db
+.DS_Store

@@ -1,0 +1,51 @@
+-- ===================================================
+-- HOTEL CANCELLATION DASHBOARD: DAX MEASURES
+-- ===================================================
+
+-- 1. Total number of bookings made
+Total Bookings = 
+COUNTROWS('booking')
+
+-- 2. Count of bookings that were cancelled
+Cancelled Bookings = 
+CALCULATE([Total Bookings], 'booking'[Booking Status] = "Canceled")
+
+-- 3. Count of confirmed bookings (guests who stayed)
+Not Cancelled Bookings = 
+[Total Bookings] - [Cancelled Bookings]
+
+-- 4. Percentage of bookings cancelled
+Cancellation Rate = 
+DIVIDE([Cancelled Bookings], [Total Bookings], 0)
+
+-- 5. Average days between booking date and arrival date
+Average Lead Time = 
+AVERAGE('booking'[Lead Time])
+
+-- 6. Average price per room per night (ADR)
+Average Room Price = 
+AVERAGE('booking'[Average Room Price])
+
+-- 7. Total nights booked across all reservations
+Total Room Nights = 
+SUM('booking'[Total Nights])
+
+-- 8. Total weekday nights booked (Mon - Fri)
+Week Nights = 
+SUM('booking'[number of week nights])
+
+-- 9. Total weekend nights booked (Sat - Sun)
+Weekend Nights = 
+SUM('booking'[number of weekend nights])
+
+-- 10. Estimated total booking revenue (Price * Nights)
+Estimated Booking Value = 
+SUM('booking'[Estimated Booking Value])
+
+-- 11. Estimated revenue lost to cancellations
+Estimated Cancelled Booking Value = 
+CALCULATE([Estimated Booking Value], 'booking'[Booking Status] = "Canceled")
+
+-- 12. Realized revenue from completed stays
+Estimated Confirmed Booking Value = 
+[Estimated Booking Value] - [Estimated Cancelled Booking Value]
