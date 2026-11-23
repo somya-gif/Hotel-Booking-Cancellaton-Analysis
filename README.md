@@ -1,10 +1,10 @@
-# 🏨 Hotel Booking Cancellation Analysis (Power BI)
+#  Hotel Booking Cancellation Analysis 
 
 A clean, easy-to-understand Power BI analytics project investigating why hotel reservations get cancelled and how hotel management can protect revenue.
 
 ---
 
-## 📌 Project Overview
+##  Overview
 
 Hotel room cancellations lead to significant revenue loss and operational challenges. When guests cancel at the last minute, rooms often go unoccupied, impacting both room revenue and hotel operations (staffing, food preparation, etc.).
 
@@ -15,9 +15,9 @@ This project analyzes **36,285 historical hotel reservations** to understand:
 
 ---
 
-## 📊 Dashboard Previews
+##  Dashboard Previews
 
-### Page 1: Executive Overview
+# Page 1: Executive Overview
 *High-level view of total bookings, overall cancellation rate (32.8%), €4.30M in revenue exposure, and multi-year booking trends.*
 ![Executive Overview](screenshots/01_executive_overview.png)
 
@@ -41,7 +41,7 @@ This project analyzes **36,285 historical hotel reservations** to understand:
 
 ---
 
-## 🎯 Key Metrics at a Glance
+##  Key Metrics at a Glance
 
 | Metric | Value | Meaning |
 | :--- | :--- | :--- |
@@ -55,7 +55,7 @@ This project analyzes **36,285 historical hotel reservations** to understand:
 
 ---
 
-## 🔍 Key Insights & Findings
+##  Key Insights & Findings
 
 ### 1. Lead Time is the #1 Driver of Cancellations
 The further in advance a guest books, the more likely they are to cancel:
@@ -81,7 +81,7 @@ The further in advance a guest books, the more likely they are to cancel:
 
 ---
 
-## 💡 Recommendations for Hotel Management
+##  Recommendations for Hotel Management
 
 1. **Require Tiered Prepayments for Early Bookings:** Require a 25% deposit for bookings made >90 days in advance, and 50% for bookings >180 days out.
 2. **Offer Non-Refundable Rates on Online Channels:** Introduce discounted non-refundable rates for online travel agency (OTA) customers to lock in revenue.
@@ -91,7 +91,7 @@ The further in advance a guest books, the more likely they are to cancel:
 
 ---
 
-## 📂 Repository Contents
+##  Repository Contents
 
 ```
 hotel-cancellation-analytics/
