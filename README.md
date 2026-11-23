@@ -1,23 +1,22 @@
-#  Hotel Booking Cancellation Analysis 
+# 🏨 Hotel Booking Cancellation Analysis (Power BI & SQL)
 
-A clean, easy-to-understand Power BI analytics project investigating why hotel reservations get cancelled and how hotel management can protect revenue.
+A clean, easy-to-understand data analytics project combining **SQL** and **Microsoft Power BI** to investigate why hotel reservations get cancelled and how hotel management can protect revenue.
 
 ---
 
-##  Overview
+## 📌 Project Overview
 
 Hotel room cancellations lead to significant revenue loss and operational challenges. When guests cancel at the last minute, rooms often go unoccupied, impacting both room revenue and hotel operations (staffing, food preparation, etc.).
 
-This project analyzes **36,285 historical hotel reservations** to understand:
-- Why do guests cancel their bookings?
-- Which customer segments and booking channels have the highest cancellation rates?
-- What policies can hotel management implement to protect revenue?
+This project analyzes **36,285 historical hotel reservations** across an end-to-end workflow:
+1. **SQL Analytics:** Querying total reservations, cancellation rates, €4.30M in revenue loss, lead time progression, and customer risk segments.
+2. **Executive Dashboard (Power BI):** An interactive 4-page reporting suite analyzing portfolio KPIs, root-cause cancellation drivers, guest stay behaviors, and strategic revenue defense.
 
 ---
 
-##  Dashboard Previews
+## 📊 Dashboard Previews
 
-# Page 1: Executive Overview
+### Page 1: Executive Overview
 *High-level view of total bookings, overall cancellation rate (32.8%), €4.30M in revenue exposure, and multi-year booking trends.*
 ![Executive Overview](screenshots/01_executive_overview.png)
 
@@ -41,7 +40,7 @@ This project analyzes **36,285 historical hotel reservations** to understand:
 
 ---
 
-##  Key Metrics at a Glance
+## 🎯 Key Metrics at a Glance
 
 | Metric | Value | Meaning |
 | :--- | :--- | :--- |
@@ -55,18 +54,19 @@ This project analyzes **36,285 historical hotel reservations** to understand:
 
 ---
 
-##  Key Insights & Findings
+## 🔍 Key Insights & Findings
 
 ### 1. Lead Time is the #1 Driver of Cancellations
 The further in advance a guest books, the more likely they are to cancel:
 - **0 to 7 days before arrival:** only **8.9%** cancel.
 - **8 to 30 days before arrival:** **18.9%** cancel.
+- **31 to 90 days before arrival:** **25.3%** cancel.
 - **91 to 180 days before arrival:** **44.9%** cancel.
 - **More than 180 days out:** **73.9%** cancel (nearly 3 out of 4!).
 > **Takeaway:** Long-lead reservations act as "free placeholders" when no deposit is required.
 
 ### 2. Online Bookings Have the Highest Cancellations
-- **Online (OTAs like Booking.com, Expedia):** Makes up **64%** of all bookings and has a high **36.5%** cancellation rate.
+- **Online (OTAs like Booking.com, Expedia):** Makes up **64%** of all bookings and has a high **36.5%** cancellation rate (€3.48M in lost revenue).
 - **Corporate Bookings:** Very reliable, with only a **10.9%** cancellation rate.
 
 ### 3. Special Requests Lower Cancellations Significantly
@@ -81,7 +81,21 @@ The further in advance a guest books, the more likely they are to cancel:
 
 ---
 
-##  Recommendations for Hotel Management
+## 🗄️ SQL Implementation Overview
+
+All queries are consolidated into an easy-to-use script: [`sql/hotel_analysis.sql`](sql/hotel_analysis.sql) (compatible with **MySQL, PostgreSQL, SQL Server, and SQLite**).
+
+### Core Queries Included:
+1. **Executive Scorecard:** Calculates total bookings, confirmed bookings, and overall cancellation rate.
+2. **Financial Loss Calculation:** Determines total portfolio value (€11.35M), lost revenue (€4.30M), and realized revenue (€7.05M).
+3. **Lead Time Segmentation:** Groups reservations into 5 lead-time tiers to analyze cancellation risk progression.
+4. **Channel Breakdown:** Evaluates cancellation rates across Online OTAs, Offline/Direct, Corporate, and Aviation segments.
+5. **Guest Commitment Analysis:** Evaluates the influence of special requests and parking space requests on cancellation rates.
+6. **Loyalty Impact:** Compares new vs. repeat guest performance.
+
+---
+
+## 💡 Recommendations for Hotel Management
 
 1. **Require Tiered Prepayments for Early Bookings:** Require a 25% deposit for bookings made >90 days in advance, and 50% for bookings >180 days out.
 2. **Offer Non-Refundable Rates on Online Channels:** Introduce discounted non-refundable rates for online travel agency (OTA) customers to lock in revenue.
@@ -91,12 +105,15 @@ The further in advance a guest books, the more likely they are to cancel:
 
 ---
 
-##  Repository Contents
+## 📂 Repository Contents
 
 ```
 hotel-cancellation-analytics/
 ├── data/
 │   └── booking.csv                      # Raw dataset (36,285 rows, 17 columns)
+├── sql/                                 # SQL queries and documentation
+│   ├── hotel_analysis.sql               # Clean, all-in-one SQL queries for all project metrics
+│   └── README.md                        # Quick guide on running the SQL queries
 ├── screenshots/                         # Dashboard photos for each report page
 │   ├── 01_executive_overview.png
 │   ├── 02_cancellation_drivers.png
@@ -106,19 +123,22 @@ hotel-cancellation-analytics/
 ├── dax_measures.dax                     # All DAX calculations with comments
 ├── .gitignore                           # Git ignore rules
 ├── LICENSE                              # MIT License
-└── README.md                            # Project documentation with images
+└── README.md                            # Main project documentation
 ```
 
 ---
 
-## 🚀 How to Open the Dashboard
+## 🚀 How to Run the Project
 
-1. Download or clone this repository:
-   ```bash
-   git clone https://github.com/somya-gif/Hotel-Booking-Cancellaton-Analysis.git
-   ```
-2. Double-click **`Hotel_Cancellation_Dashboard.pbix`** to open it in **Power BI Desktop**.
-3. **If you need to refresh data:**
+### 1. SQL Analysis
+1. Open your SQL tool (**MySQL Workbench**, **pgAdmin**, **DBeaver**, or **DB Browser for SQLite**).
+2. Open [`sql/hotel_analysis.sql`](sql/hotel_analysis.sql) and execute the `CREATE TABLE` query.
+3. Import `data/booking.csv` using your database client's import wizard.
+4. Run the queries to explore the metrics. *(See [sql/README.md](sql/README.md) for detailed steps)*.
+
+### 2. Power BI Dashboard
+1. Double-click **`Hotel_Cancellation_Dashboard.pbix`** to open it in **Power BI Desktop**.
+2. **If you need to refresh data:**
    - In Power BI Desktop, click **Transform Data** > **Data source settings**.
    - Click **Change Source...** and select `data/booking.csv` on your computer.
    - Click **Close & Apply**.
@@ -126,6 +146,7 @@ hotel-cancellation-analytics/
 ---
 
 ## 🛠️ Tools Used
+- **SQL (MySQL / PostgreSQL / SQL Server / SQLite):** Data querying, KPI calculations, lead time tiering, and segment analysis.
 - **Microsoft Power BI Desktop:** Visualizations, interactive filtering, and dashboard design.
 - **Power Query (M):** Data cleaning, type conversion, and column renaming.
 - **DAX (Data Analysis Expressions):** Key business measures and KPIs.
