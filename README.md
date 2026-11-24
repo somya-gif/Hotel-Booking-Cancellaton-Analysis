@@ -1,10 +1,10 @@
-# 🏨 Hotel Booking Cancellation Analysis (Power BI & SQL)
+# Hotel Booking Cancellation Analysis (Power BI & SQL)
 
 A clean, easy-to-understand data analytics project combining **SQL** and **Microsoft Power BI** to investigate why hotel reservations get cancelled and how hotel management can protect revenue.
 
 ---
 
-## 📌 Project Overview
+## Project Overview
 
 Hotel room cancellations lead to significant revenue loss and operational challenges. When guests cancel at the last minute, rooms often go unoccupied, impacting both room revenue and hotel operations (staffing, food preparation, etc.).
 
@@ -14,7 +14,7 @@ This project analyzes **36,285 historical hotel reservations** across an end-to-
 
 ---
 
-## 📊 Dashboard Previews
+## Dashboard Previews
 
 ### Page 1: Executive Overview
 *High-level view of total bookings, overall cancellation rate (32.8%), €4.30M in revenue exposure, and multi-year booking trends.*
@@ -40,7 +40,7 @@ This project analyzes **36,285 historical hotel reservations** across an end-to-
 
 ---
 
-## 🎯 Key Metrics at a Glance
+## Key Metrics at a Glance
 
 | Metric | Value | Meaning |
 | :--- | :--- | :--- |
@@ -54,7 +54,7 @@ This project analyzes **36,285 historical hotel reservations** across an end-to-
 
 ---
 
-## 🔍 Key Insights & Findings
+## Key Insights & Findings
 
 ### 1. Lead Time is the #1 Driver of Cancellations
 The further in advance a guest books, the more likely they are to cancel:
@@ -81,7 +81,7 @@ The further in advance a guest books, the more likely they are to cancel:
 
 ---
 
-## 🗄️ SQL Implementation Overview
+## SQL Implementation Overview
 
 All queries are consolidated into an easy-to-use script: [`sql/hotel_analysis.sql`](sql/hotel_analysis.sql) (compatible with **MySQL, PostgreSQL, SQL Server, and SQLite**).
 
@@ -95,7 +95,7 @@ All queries are consolidated into an easy-to-use script: [`sql/hotel_analysis.sq
 
 ---
 
-## 💡 Recommendations for Hotel Management
+## Recommendations for Hotel Management
 
 1. **Require Tiered Prepayments for Early Bookings:** Require a 25% deposit for bookings made >90 days in advance, and 50% for bookings >180 days out.
 2. **Offer Non-Refundable Rates on Online Channels:** Introduce discounted non-refundable rates for online travel agency (OTA) customers to lock in revenue.
@@ -105,7 +105,7 @@ All queries are consolidated into an easy-to-use script: [`sql/hotel_analysis.sq
 
 ---
 
-## 📂 Repository Contents
+## Repository Contents
 
 ```
 hotel-cancellation-analytics/
@@ -128,7 +128,7 @@ hotel-cancellation-analytics/
 
 ---
 
-## 🚀 How to Run the Project
+## How to Run the Project
 
 ### 1. SQL Analysis
 1. Open your SQL tool (**MySQL Workbench**, **pgAdmin**, **DBeaver**, or **DB Browser for SQLite**).
@@ -145,7 +145,7 @@ hotel-cancellation-analytics/
 
 ---
 
-## 🛠️ Tools Used
+## Tools Used
 - **SQL (MySQL / PostgreSQL / SQL Server / SQLite):** Data querying, KPI calculations, lead time tiering, and segment analysis.
 - **Microsoft Power BI Desktop:** Visualizations, interactive filtering, and dashboard design.
 - **Power Query (M):** Data cleaning, type conversion, and column renaming.
@@ -153,6 +153,6 @@ hotel-cancellation-analytics/
 
 ---
 
-## 👤 Author
+## Author
 **Soumya Prakash Patel**  
 GitHub: [@somya-gif](https://github.com/somya-gif)
